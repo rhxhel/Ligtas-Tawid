@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ligtas Tawid is a sensor-based traffic light prototype designed to create safer pedestrian crossings." />
     <title>Ligtas Tawid Traffic Light</title>
-    <link rel="icon" type="image" href="uploads/LIGTAS-TAWID-LOGO.png" />
+    <link rel="icon" type="image/png" href="uploads/LIGTAS-TAWID-LOGO.png" />
     <link rel="preload" as="image" href="uploads/bernardino.jpg" />
     <link rel="preload" as="image" href="uploads/matuto.jpg" />
     <link rel="preload" as="image" href="uploads/revaula.jpg" />
@@ -23,13 +23,18 @@
             <small>Sensor-based traffic system</small>
           </span>
         </a>
-        <div class="route-links">
+        <div class="route-links" id="nav-links">
           <a href="#about">About</a>
           <a href="#objectives">Foundation</a>
           <a href="#process">Process</a>
           <a href="#components">Components</a>
           <a href="#team">Team</a>
         </div>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
       <section class="hero">
         <div class="hero-atmosphere" aria-hidden="true">
