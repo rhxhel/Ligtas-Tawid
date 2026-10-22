@@ -6904,3 +6904,141 @@ footer h2 {
     transition: none;
   }
 }
+
+/* ===== Demo pop-ups: live-intersection design synced from the control panel =====
+   Paste at the very END of css/style.css */
+
+.demo-stage .waiting-zone { z-index: 13; right: auto; }
+.demo-stage .north-zone { top: auto; bottom: 12px; left: calc(50% - 164px); }
+.demo-stage .south-zone { top: 12px; bottom: auto; left: calc(50% + 76px); }
+
+.demo-stage .pedestrian-signal { z-index: 14; }
+
+/* Sensor lens lights up when something is detected */
+.pedestrian-signal .sensor-lens {
+  width: 16px;
+  height: 16px;
+  display: block;
+  border: 3px solid #8ed0d2;
+  border-radius: 50%;
+  transition: border-color .35s ease, background-color .35s ease, box-shadow .35s ease;
+}
+.sensor-site.detected .sensor-lens {
+  border-color: #b9f5f5;
+  background: rgba(142, 208, 210, .28);
+  box-shadow: 0 0 10px rgba(142, 208, 210, .75);
+}
+
+/* Sensor waves: always animating, faded in by `filter` only while detected */
+.pedestrian-signal .sensor-wave {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #8ed0d2;
+  border-right: 0;
+  border-radius: 50% 0 0 50%;
+  opacity: 0;
+  transform: translateY(-50%);
+  transform-origin: right center;
+  animation: integratedSensorWave 1.6s ease-out infinite;
+  filter: opacity(0);
+  transition: filter .35s ease;
+}
+.pedestrian-signal .sensor-wave.wave-two { width: 60px; animation-delay: .45s; }
+.ped-signal-bottom .sensor-wave {
+  right: auto;
+  left: 100%;
+  border: 3px solid #8ed0d2;
+  border-left: 0;
+  border-radius: 0 50% 50% 0;
+  transform-origin: left center;
+}
+.sensor-site.detected .sensor-wave { filter: opacity(1); }
+/* Waves are off while the vehicle light is yellow or red */
+.demo-stage-2 .sensor-site .sensor-wave,
+.demo-stage-3 .sensor-site .sensor-wave { filter: opacity(0); }
+
+/* Pedestrian signal states */
+.demo-stage-1 .pedestrian-signal .stop,
+.demo-stage-2 .pedestrian-signal .stop {
+  background: var(--red);
+  box-shadow: 0 0 9px rgba(229, 72, 77, .8);
+}
+.demo-stage-3 .pedestrian-signal .walk {
+  background: var(--green);
+  box-shadow: 0 0 9px rgba(48, 164, 108, .8);
+}
+
+/* Person dots: fade/slide in when detected */
+.street-person {
+  position: absolute;
+  z-index: 15;
+  width: 23px;
+  height: 23px;
+  display: block;
+  border: 3px solid #171a1d;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .22), 0 0 0 3px rgba(242, 194, 48, .12);
+  transform-origin: center;
+  opacity: 0;
+  translate: 0 -10px;
+  pointer-events: none;
+  transition: opacity .3s ease-in, translate .3s ease-in;
+}
+.street-person i, .street-person span, .street-person b, .street-person em { display: none; }
+.demo-stage .north-person { top: 10px; bottom: auto; right: auto; left: calc(50% - 38px); }
+.demo-stage .south-person { bottom: 10px; top: auto; right: auto; left: calc(50% + 15px); translate: 0 10px; }
+.sensor-person.detected {
+  opacity: 1;
+  translate: 0 0;
+  transition: opacity .35s ease-out, translate .35s ease-out;
+  animation: topViewWaiting 1.6s ease-in-out infinite;
+}
+.demo-stage-3 .north-person.detected { animation: topViewCrossNorth 7s linear infinite; }
+.demo-stage-3 .south-person.detected { animation: topViewCrossSouth 7s linear infinite; }
+
+@keyframes topViewCrossNorth {
+  0% { top: 10px; opacity: 0; }
+  5% { opacity: 1; }
+  43% { top: 143px; }
+  54% { top: 143px; }
+  95% { top: 292px; opacity: 1; }
+  100% { top: 292px; opacity: 0; }
+}
+@keyframes topViewCrossSouth {
+  0% { bottom: 10px; opacity: 0; }
+  5% { opacity: 1; }
+  43% { bottom: 143px; }
+  54% { bottom: 143px; }
+  95% { bottom: 292px; opacity: 1; }
+  100% { bottom: 292px; opacity: 0; }
+}
+
+@media (max-width: 760px) {
+  .pedestrian-signal { width: 66px; }
+  .demo-stage .vehicle-signal-system { top: 40px; bottom: 40px; left: calc(50% + 52px); }
+  .vehicle-signal-top { top: 18px; }
+  .vehicle-signal-bottom { bottom: 18px; }
+  @keyframes topViewCrossNorth {
+    0% { top: 9px; opacity: 0; }
+    5% { opacity: 1; }
+    43%, 54% { top: 127px; }
+    95% { top: 260px; opacity: 1; }
+    100% { top: 260px; opacity: 0; }
+  }
+  @keyframes topViewCrossSouth {
+    0% { bottom: 9px; opacity: 0; }
+    5% { opacity: 1; }
+    43%, 54% { bottom: 127px; }
+    95% { bottom: 260px; opacity: 1; }
+    100% { bottom: 260px; opacity: 0; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .street-person { transition: none !important; }
+  .sensor-person.detected { opacity: 1; }
+}
