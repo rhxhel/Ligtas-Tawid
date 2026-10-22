@@ -496,6 +496,7 @@
           </article>
         </div>
 
+        <!-- ===== Demo pop-ups (live-intersection design synced from the control panel) ===== -->
         <div class="demo-overlay" data-demo-dialog="0" hidden="">
           <section class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-title-0">
             <button class="demo-close" type="button" aria-label="Close demonstration" data-demo-close="true">
@@ -508,18 +509,12 @@
             </header>
             <div class="demo-stage demo-stage-1" aria-hidden="true">
               <div class="street-walkway street-walkway-top">
-                <div class="waiting-zone">Waiting area</div>
-                <div class="pedestrian-signal ped-signal-top">
-                  <i class="stop"></i>
-                  <i class="walk"></i>
-                  <span class="sensor-wave"></span>
-                  <span class="sensor-wave wave-two"></span>
+                <div class="waiting-zone north-zone">Waiting area</div>
+                <div class="pedestrian-signal ped-signal-top sensor-site detected">
+                  <span class="sensor-lens"></span><i class="stop"></i><i class="walk"></i>
+                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
                 </div>
-                <div class="street-person waiting-person">
-                  <i></i><span></span><b></b><em></em>
-                  <u class="person-wave"></u>
-                  <u class="person-wave wave-two"></u>
-                </div>
+                <div class="street-person sensor-person north-person detected"></div>
               </div>
               <div class="street-road road-top">
                 <div class="street-crosswalk"></div>
@@ -527,7 +522,7 @@
                 <div class="street-car car-east car-two"><span></span></div>
                 <div class="street-car car-east car-three"><span></span></div>
               </div>
-              <div class="street-island"></div>
+              <div class="street-island"><div class="island-path"></div></div>
               <div class="street-road road-bottom">
                 <div class="street-crosswalk"></div>
                 <div class="street-car car-west car-one"><span></span></div>
@@ -535,23 +530,17 @@
                 <div class="street-car car-west car-three"><span></span></div>
               </div>
               <div class="street-walkway street-walkway-bottom">
-                <div class="pedestrian-signal ped-signal-bottom">
-                  <i class="stop"></i>
-                  <i class="walk"></i>
+                <div class="waiting-zone south-zone">Waiting area</div>
+                <div class="pedestrian-signal ped-signal-bottom sensor-site">
+                  <i class="walk"></i><i class="stop"></i><span class="sensor-lens"></span>
+                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
                 </div>
+                <div class="street-person sensor-person south-person"></div>
               </div>
               <div class="vehicle-signal-system">
                 <span class="signal-spine"></span>
-                <div class="vehicle-signal-head vehicle-signal-top">
-                  <i class="r"></i>
-                  <i class="a"></i>
-                  <i class="g"></i>
-                </div>
-                <div class="vehicle-signal-head vehicle-signal-bottom">
-                  <i class="r"></i>
-                  <i class="a"></i>
-                  <i class="g"></i>
-                </div>
+                <div class="vehicle-signal-head vehicle-signal-top"><i class="g"></i><i class="a"></i><i class="r"></i></div>
+                <div class="vehicle-signal-head vehicle-signal-bottom"><i class="r"></i><i class="a"></i><i class="g"></i></div>
               </div>
             </div>
             <p class="demo-description">
@@ -572,18 +561,12 @@
             </header>
             <div class="demo-stage demo-stage-2" aria-hidden="true">
               <div class="street-walkway street-walkway-top">
-                <div class="waiting-zone">Waiting area</div>
-                <div class="pedestrian-signal ped-signal-top">
-                  <i class="stop"></i>
-                  <i class="walk"></i>
-                  <span class="sensor-wave"></span>
-                  <span class="sensor-wave wave-two"></span>
+                <div class="waiting-zone north-zone">Waiting area</div>
+                <div class="pedestrian-signal ped-signal-top sensor-site detected">
+                  <span class="sensor-lens"></span><i class="stop"></i><i class="walk"></i>
+                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
                 </div>
-                <div class="street-person waiting-person">
-                  <i></i><span></span><b></b><em></em>
-                  <u class="person-wave"></u>
-                  <u class="person-wave wave-two"></u>
-                </div>
+                <div class="street-person sensor-person north-person detected"></div>
               </div>
               <div class="street-road road-top">
                 <div class="street-crosswalk"></div>
@@ -591,7 +574,7 @@
                 <div class="street-car car-east car-two"><span></span></div>
                 <div class="street-car car-east car-three"><span></span></div>
               </div>
-              <div class="street-island"></div>
+              <div class="street-island"><div class="island-path"></div></div>
               <div class="street-road road-bottom">
                 <div class="street-crosswalk"></div>
                 <div class="street-car car-west car-one"><span></span></div>
@@ -599,23 +582,17 @@
                 <div class="street-car car-west car-three"><span></span></div>
               </div>
               <div class="street-walkway street-walkway-bottom">
-                <div class="pedestrian-signal ped-signal-bottom">
-                  <i class="stop"></i>
-                  <i class="walk"></i>
+                <div class="waiting-zone south-zone">Waiting area</div>
+                <div class="pedestrian-signal ped-signal-bottom sensor-site">
+                  <i class="walk"></i><i class="stop"></i><span class="sensor-lens"></span>
+                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
                 </div>
+                <div class="street-person sensor-person south-person"></div>
               </div>
               <div class="vehicle-signal-system">
                 <span class="signal-spine"></span>
-                <div class="vehicle-signal-head vehicle-signal-top">
-                  <i class="r"></i>
-                  <i class="a"></i>
-                  <i class="g"></i>
-                </div>
-                <div class="vehicle-signal-head vehicle-signal-bottom">
-                  <i class="r"></i>
-                  <i class="a"></i>
-                  <i class="g"></i>
-                </div>
+                <div class="vehicle-signal-head vehicle-signal-top"><i class="g"></i><i class="a"></i><i class="r"></i></div>
+                <div class="vehicle-signal-head vehicle-signal-bottom"><i class="r"></i><i class="a"></i><i class="g"></i></div>
               </div>
               <div class="demo-verifying">
                 <span>Verifying presence</span>
@@ -641,18 +618,12 @@
             </header>
             <div class="demo-stage demo-stage-3" aria-hidden="true">
               <div class="street-walkway street-walkway-top">
-                <div class="waiting-zone">Waiting area</div>
-                <div class="pedestrian-signal ped-signal-top">
-                  <i class="stop"></i>
-                  <i class="walk"></i>
-                  <span class="sensor-wave"></span>
-                  <span class="sensor-wave wave-two"></span>
+                <div class="waiting-zone north-zone">Waiting area</div>
+                <div class="pedestrian-signal ped-signal-top sensor-site detected">
+                  <span class="sensor-lens"></span><i class="stop"></i><i class="walk"></i>
+                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
                 </div>
-                <div class="street-person waiting-person">
-                  <i></i><span></span><b></b><em></em>
-                  <u class="person-wave"></u>
-                  <u class="person-wave wave-two"></u>
-                </div>
+                <div class="street-person sensor-person north-person detected"></div>
               </div>
               <div class="street-road road-top">
                 <div class="street-crosswalk"></div>
@@ -660,7 +631,7 @@
                 <div class="street-car car-east car-two"><span></span></div>
                 <div class="street-car car-east car-three"><span></span></div>
               </div>
-              <div class="street-island"></div>
+              <div class="street-island"><div class="island-path"></div></div>
               <div class="street-road road-bottom">
                 <div class="street-crosswalk"></div>
                 <div class="street-car car-west car-one"><span></span></div>
@@ -668,23 +639,17 @@
                 <div class="street-car car-west car-three"><span></span></div>
               </div>
               <div class="street-walkway street-walkway-bottom">
-                <div class="pedestrian-signal ped-signal-bottom">
-                  <i class="stop"></i>
-                  <i class="walk"></i>
+                <div class="waiting-zone south-zone">Waiting area</div>
+                <div class="pedestrian-signal ped-signal-bottom sensor-site detected">
+                  <i class="walk"></i><i class="stop"></i><span class="sensor-lens"></span>
+                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
                 </div>
+                <div class="street-person sensor-person south-person detected"></div>
               </div>
               <div class="vehicle-signal-system">
                 <span class="signal-spine"></span>
-                <div class="vehicle-signal-head vehicle-signal-top">
-                  <i class="r"></i>
-                  <i class="a"></i>
-                  <i class="g"></i>
-                </div>
-                <div class="vehicle-signal-head vehicle-signal-bottom">
-                  <i class="r"></i>
-                  <i class="a"></i>
-                  <i class="g"></i>
-                </div>
+                <div class="vehicle-signal-head vehicle-signal-top"><i class="g"></i><i class="a"></i><i class="r"></i></div>
+                <div class="vehicle-signal-head vehicle-signal-bottom"><i class="r"></i><i class="a"></i><i class="g"></i></div>
               </div>
               <div class="demo-walk-label">Protected crossing</div>
             </div>
