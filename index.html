@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ligtas Tawid is a sensor-based traffic light prototype designed to create safer pedestrian crossings." />
     <title>Ligtas Tawid Traffic Light</title>
-    <link rel="icon" type="image/png" sizes="any" href="uploads/LIGTAS-TAWID-LOGO.png?v=2" />
-    <link rel="shortcut icon" type="image/png" href="uploads/LIGTAS-TAWID-LOGO.png?v=2" />
-    <link rel="apple-touch-icon" href="uploads/LIGTAS-TAWID-LOGO.png?v=2" />
+    <link rel="icon" type="image" href="uploads/LIGTAS-TAWID-LOGO.png" />
     <link rel="preload" as="image" href="uploads/bernardino.jpg" />
     <link rel="preload" as="image" href="uploads/matuto.jpg" />
     <link rel="preload" as="image" href="uploads/revaula.jpg" />
@@ -25,18 +23,13 @@
             <small>Sensor-based traffic system</small>
           </span>
         </a>
-        <div class="route-links" id="nav-links">
+        <div class="route-links">
           <a href="#about">About</a>
           <a href="#objectives">Foundation</a>
           <a href="#process">Process</a>
           <a href="#components">Components</a>
           <a href="#team">Team</a>
         </div>
-        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </nav>
       <section class="hero">
         <div class="hero-atmosphere" aria-hidden="true">
@@ -498,7 +491,6 @@
           </article>
         </div>
 
-        <!-- ===== Demo pop-ups (live-intersection design synced from the control panel) ===== -->
         <div class="demo-overlay" data-demo-dialog="0" hidden="">
           <section class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-title-0">
             <button class="demo-close" type="button" aria-label="Close demonstration" data-demo-close="true">
@@ -511,12 +503,18 @@
             </header>
             <div class="demo-stage demo-stage-1" aria-hidden="true">
               <div class="street-walkway street-walkway-top">
-                <div class="waiting-zone north-zone">Waiting area</div>
-                <div class="pedestrian-signal ped-signal-top sensor-site detected">
-                  <span class="sensor-lens"></span><i class="stop"></i><i class="walk"></i>
-                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
+                <div class="waiting-zone">Waiting area</div>
+                <div class="pedestrian-signal ped-signal-top">
+                  <i class="stop"></i>
+                  <i class="walk"></i>
+                  <span class="sensor-wave"></span>
+                  <span class="sensor-wave wave-two"></span>
                 </div>
-                <div class="street-person sensor-person north-person detected"></div>
+                <div class="street-person waiting-person">
+                  <i></i><span></span><b></b><em></em>
+                  <u class="person-wave"></u>
+                  <u class="person-wave wave-two"></u>
+                </div>
               </div>
               <div class="street-road road-top">
                 <div class="street-crosswalk"></div>
@@ -532,17 +530,23 @@
                 <div class="street-car car-west car-three"><span></span></div>
               </div>
               <div class="street-walkway street-walkway-bottom">
-                <div class="waiting-zone south-zone">Waiting area</div>
-                <div class="pedestrian-signal ped-signal-bottom sensor-site">
-                  <i class="walk"></i><i class="stop"></i><span class="sensor-lens"></span>
-                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
+                <div class="pedestrian-signal ped-signal-bottom">
+                  <i class="stop"></i>
+                  <i class="walk"></i>
                 </div>
-                <div class="street-person sensor-person south-person"></div>
               </div>
               <div class="vehicle-signal-system">
                 <span class="signal-spine"></span>
-                <div class="vehicle-signal-head vehicle-signal-top"><i class="g"></i><i class="a"></i><i class="r"></i></div>
-                <div class="vehicle-signal-head vehicle-signal-bottom"><i class="r"></i><i class="a"></i><i class="g"></i></div>
+                <div class="vehicle-signal-head vehicle-signal-top">
+                  <i class="r"></i>
+                  <i class="a"></i>
+                  <i class="g"></i>
+                </div>
+                <div class="vehicle-signal-head vehicle-signal-bottom">
+                  <i class="r"></i>
+                  <i class="a"></i>
+                  <i class="g"></i>
+                </div>
               </div>
             </div>
             <p class="demo-description">
@@ -563,12 +567,18 @@
             </header>
             <div class="demo-stage demo-stage-2" aria-hidden="true">
               <div class="street-walkway street-walkway-top">
-                <div class="waiting-zone north-zone">Waiting area</div>
-                <div class="pedestrian-signal ped-signal-top sensor-site detected">
-                  <span class="sensor-lens"></span><i class="stop"></i><i class="walk"></i>
-                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
+                <div class="waiting-zone">Waiting area</div>
+                <div class="pedestrian-signal ped-signal-top">
+                  <i class="stop"></i>
+                  <i class="walk"></i>
+                  <span class="sensor-wave"></span>
+                  <span class="sensor-wave wave-two"></span>
                 </div>
-                <div class="street-person sensor-person north-person detected"></div>
+                <div class="street-person waiting-person">
+                  <i></i><span></span><b></b><em></em>
+                  <u class="person-wave"></u>
+                  <u class="person-wave wave-two"></u>
+                </div>
               </div>
               <div class="street-road road-top">
                 <div class="street-crosswalk"></div>
@@ -584,17 +594,23 @@
                 <div class="street-car car-west car-three"><span></span></div>
               </div>
               <div class="street-walkway street-walkway-bottom">
-                <div class="waiting-zone south-zone">Waiting area</div>
-                <div class="pedestrian-signal ped-signal-bottom sensor-site">
-                  <i class="walk"></i><i class="stop"></i><span class="sensor-lens"></span>
-                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
+                <div class="pedestrian-signal ped-signal-bottom">
+                  <i class="stop"></i>
+                  <i class="walk"></i>
                 </div>
-                <div class="street-person sensor-person south-person"></div>
               </div>
               <div class="vehicle-signal-system">
                 <span class="signal-spine"></span>
-                <div class="vehicle-signal-head vehicle-signal-top"><i class="g"></i><i class="a"></i><i class="r"></i></div>
-                <div class="vehicle-signal-head vehicle-signal-bottom"><i class="r"></i><i class="a"></i><i class="g"></i></div>
+                <div class="vehicle-signal-head vehicle-signal-top">
+                  <i class="r"></i>
+                  <i class="a"></i>
+                  <i class="g"></i>
+                </div>
+                <div class="vehicle-signal-head vehicle-signal-bottom">
+                  <i class="r"></i>
+                  <i class="a"></i>
+                  <i class="g"></i>
+                </div>
               </div>
               <div class="demo-verifying">
                 <span>Verifying presence</span>
@@ -620,12 +636,18 @@
             </header>
             <div class="demo-stage demo-stage-3" aria-hidden="true">
               <div class="street-walkway street-walkway-top">
-                <div class="waiting-zone north-zone">Waiting area</div>
-                <div class="pedestrian-signal ped-signal-top sensor-site detected">
-                  <span class="sensor-lens"></span><i class="stop"></i><i class="walk"></i>
-                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
+                <div class="waiting-zone">Waiting area</div>
+                <div class="pedestrian-signal ped-signal-top">
+                  <i class="stop"></i>
+                  <i class="walk"></i>
+                  <span class="sensor-wave"></span>
+                  <span class="sensor-wave wave-two"></span>
                 </div>
-                <div class="street-person sensor-person north-person detected"></div>
+                <div class="street-person waiting-person">
+                  <i></i><span></span><b></b><em></em>
+                  <u class="person-wave"></u>
+                  <u class="person-wave wave-two"></u>
+                </div>
               </div>
               <div class="street-road road-top">
                 <div class="street-crosswalk"></div>
@@ -641,17 +663,23 @@
                 <div class="street-car car-west car-three"><span></span></div>
               </div>
               <div class="street-walkway street-walkway-bottom">
-                <div class="waiting-zone south-zone">Waiting area</div>
-                <div class="pedestrian-signal ped-signal-bottom sensor-site detected">
-                  <i class="walk"></i><i class="stop"></i><span class="sensor-lens"></span>
-                  <span class="sensor-wave"></span><span class="sensor-wave wave-two"></span>
+                <div class="pedestrian-signal ped-signal-bottom">
+                  <i class="stop"></i>
+                  <i class="walk"></i>
                 </div>
-                <div class="street-person sensor-person south-person detected"></div>
               </div>
               <div class="vehicle-signal-system">
                 <span class="signal-spine"></span>
-                <div class="vehicle-signal-head vehicle-signal-top"><i class="g"></i><i class="a"></i><i class="r"></i></div>
-                <div class="vehicle-signal-head vehicle-signal-bottom"><i class="r"></i><i class="a"></i><i class="g"></i></div>
+                <div class="vehicle-signal-head vehicle-signal-top">
+                  <i class="r"></i>
+                  <i class="a"></i>
+                  <i class="g"></i>
+                </div>
+                <div class="vehicle-signal-head vehicle-signal-bottom">
+                  <i class="r"></i>
+                  <i class="a"></i>
+                  <i class="g"></i>
+                </div>
               </div>
               <div class="demo-walk-label">Protected crossing</div>
             </div>
@@ -702,8 +730,9 @@
               <img class="hardware-slide" src="uploads/hardware/7.png" alt="Ligtas Tawid prototype testing and final setup" loading="lazy" hidden=""/>
               <img class="hardware-slide" src="uploads/hardware/8.png" alt="Ligtas Tawid prototype testing and final setup" loading="lazy" hidden=""/>
               <img class="hardware-slide" src="uploads/hardware/9.png" alt="Ligtas Tawid prototype testing and final setup" loading="lazy" hidden=""/>
+              <img class="hardware-slide" src="uploads/hardware/10.png" alt="Ligtas Tawid prototype testing and final setup" loading="lazy" hidden=""/>
             </div>
-            <span class="carousel-count"><b>01</b> / 09</span>
+            <span class="carousel-count"><b>01</b> / 10</span>
             <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous hardware photo">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
             </button>
@@ -720,6 +749,7 @@
               <button class="" type="button" aria-label="Show prototype photo 7"></button>
               <button class="" type="button" aria-label="Show prototype photo 8"></button>
               <button class="" type="button" aria-label="Show prototype photo 9"></button>
+              <button class="" type="button" aria-label="Show prototype photo 10"></button>
             </div>
           </div>
           <div class="feature-side">
