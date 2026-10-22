@@ -491,3 +491,30 @@ window.addEventListener('keydown', (event) => {
   observe([...targets, ...marks], { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
   observe(sections, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
 })();
+
+/* Mobile navbar: three-bar menu toggle */
+(() => {
+  const nav = document.querySelector('.route-nav');
+  const toggle = document.querySelector('.nav-toggle');
+  if (!nav || !toggle) return;
+
+  const setOpen = (open) => {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+
+  toggle.addEventListener('click', () => setOpen(!nav.classList.contains('is-open')));
+
+  nav.querySelectorAll('.route-links a').forEach((link) =>
+    link.addEventListener('click', () => setOpen(false))
+  );
+
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target)) setOpen(false);
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
+  });
+  window.matchMedia('(min-width: 761px)').addEventListener('change', () => setOpen(false));
+})();
