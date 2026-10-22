@@ -7190,3 +7190,8 @@ footer h2 {
   .street-person { transition: none !important; }
   .sensor-person.detected { opacity: 1; }
 }
+
+/* Demo pop-ups: remove the pedestrian lane on the green island */
+.demo-stage .island-path {
+  display: none;
+}
