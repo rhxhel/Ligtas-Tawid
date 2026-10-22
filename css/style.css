@@ -3059,7 +3059,7 @@ html {
   border-top-color: var(--blue);
 }
 .info-modal.is-gold {
-  --accent: var(--yellow);
+  --accent: var(--blue);
 }
 
 .objectives .objective-card.wide {
@@ -6748,5 +6748,159 @@ footer h2 {
   .footer-return {
     align-self: flex-end;
     margin-right: 14px;   /* keeps the tilted sign from touching the edge */
+  }
+}
+
+/* ============ Mobile navbar ============ */
+
+/* Hamburger button: hidden on desktop */
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  /* Navbar grows to fit its content, no inner scrollbar */
+  .route-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    min-height: 58px;
+    overflow: visible;
+    padding-block: 10px;
+  }
+
+  /* Logo + name + tagline */
+  .route-brand {
+    margin-bottom: 0;
+  }
+  .route-brand img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .route-nav .route-brand > span:last-child {
+    display: grid;
+    gap: 4px;
+  }
+  .route-brand b {
+    font-size: 14px;
+    letter-spacing: .12em;
+    white-space: nowrap;
+  }
+  .route-brand small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: .14em;
+    white-space: nowrap;
+  }
+
+  /* Three-bar button */
+  .nav-toggle {
+    display: grid;
+    gap: 5px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    place-content: center;
+    background: #171a1d;
+    border: 2px solid #454b50;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background .2s, border-color .2s;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--yellow);
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .nav-toggle:hover,
+  .route-nav.is-open .nav-toggle {
+    border-color: var(--yellow);
+  }
+  .route-nav.is-open .nav-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .route-nav.is-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .route-nav.is-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Animated drop-down links */
+  .route-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: none;
+    overflow: visible;
+    padding: 8px var(--px) 14px;
+    background: #242628;
+    border-bottom: 3px solid var(--yellow);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, .35);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-14px);
+    clip-path: inset(0 0 100% 0);
+    pointer-events: none;
+    transition:
+      opacity .3s ease,
+      transform .4s cubic-bezier(.2, .8, .2, 1),
+      clip-path .4s cubic-bezier(.2, .8, .2, 1),
+      visibility 0s linear .4s;
+  }
+  .route-nav.is-open .route-links {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 -40px 0);
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+  .route-links a {
+    padding: 15px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 0;
+    font-size: 12px;
+    letter-spacing: .16em;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity .3s ease, transform .35s ease, color .2s, background .2s;
+  }
+  .route-links a:last-child {
+    border-bottom: 0;
+  }
+  .route-nav.is-open .route-links a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .route-nav.is-open .route-links a:nth-child(1) { transition-delay: .06s; }
+  .route-nav.is-open .route-links a:nth-child(2) { transition-delay: .12s; }
+  .route-nav.is-open .route-links a:nth-child(3) { transition-delay: .18s; }
+  .route-nav.is-open .route-links a:nth-child(4) { transition-delay: .24s; }
+  .route-nav.is-open .route-links a:nth-child(5) { transition-delay: .30s; }
+
+  /* Centre logo (hero title) */
+  .hero-copy {
+    width: 96vw;
+  }
+  .hero .hero-copy img.hero-title {
+    width: 80vw !important;
+    max-width: 440px !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+  .route-links,
+  .route-links a {
+    transition: none;
   }
 }
