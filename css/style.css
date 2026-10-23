@@ -7195,3 +7195,11 @@ footer h2 {
 .demo-stage .island-path {
   display: none;
 }
+
+
+/* Demos 1 & 2: show the waiting person */
+.demo-stage-1 .street-person,
+.demo-stage-2 .street-person {
+  opacity: 1;
+  translate: 0 0;
+}
